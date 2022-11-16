@@ -39,7 +39,15 @@ function currentTime() {
   let hh = date.getHours();
   let mm = date.getMinutes();
   let ss = date.getSeconds();
-  document.getElementsByClassName("date-text")[0].innerText = days[0] + ", " + months[date.getMonth()] + " " + date.getDate();
+
+  const now = new Date();
+  const options = {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  };
+
+  document.getElementsByClassName("date-text")[0].innerText = new Intl.DateTimeFormat('en-US', options).format(now);
   let time = parseFloat(mm / 100) + parseInt(hh);
   if (day == 6) {
     let time = (7 - day) + " day until school"
@@ -54,7 +62,7 @@ function currentTime() {
     hh = (hh < 10) ? "0" + hh : hh;
     mm = (mm < 10) ? "0" + mm : mm;
     ss = (ss < 10) ? "0" + ss : ss;
-    document.getElementsByClassName("circle-time")[0].innerText = hh + ":" + mm + ":" + ss;
+    document.getElementsByClassName("circle-time")[0].innerText = `${hh}:${mm}:${ss}`;
     document.getElementsByClassName("circle-text")[0].innerText = " Until first Period";
     let t = setTimeout(function() {
       currentTime()
@@ -71,7 +79,7 @@ function currentTime() {
         hh = (hh < 10) ? "0" + hh : hh;
         mm = (mm < 10) ? "0" + mm : mm;
         ss = (ss < 10) ? "0" + ss : ss;
-        document.getElementsByClassName("circle-time")[0].innerText = hh + ":" + mm + ":" + ss + " ";
+        document.getElementsByClassName("circle-time")[0].innerText = `${hh}:${mm}:${ss} `;
         document.getElementsByClassName("circle-text")[0].innerText = periods[i];
         break;
       }
@@ -81,8 +89,6 @@ function currentTime() {
     }, 1000);
   }
 }
-
-
 currentTime();
 
 
@@ -100,7 +106,6 @@ function change() {
   let day = date.getDay();
   let schoolDay = day;
   let month = date.getMonth()
-  let monthDate = date.getDate()
   for (var x = 0; x < list.length; x++) {
     for (var b = 0; b < list[x].length; b++) {
       var board = document.createElement('div');
@@ -110,7 +115,7 @@ function change() {
       document.getElementsByClassName("amazing-events")[x].appendChild(board);
     }
     document.getElementsByClassName("day-header")[x].innerText = days[schoolDay];
-    document.getElementsByClassName("day-date")[x].innerText = months[month] + " " + (parseInt(date.getDate() + x));
+    document.getElementsByClassName("day-date")[x].innerText = `${months[month]} ${parseInt(date.getDate() + x)}`;
     if (schoolDay < 6) {
       schoolDay += 1;
     } else {
