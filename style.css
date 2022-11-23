@@ -136,6 +136,9 @@ body {
 /*###################*/
 /* SCHEDULE SECTION */
 /*###################*/
+.section {
+  transition: transform 1s, opacity 1s;  
+}
 .section-main {
   margin-bottom: 6.4rem;
 }
@@ -490,6 +493,9 @@ body {
 /*###################*/
 /* BELLS SECTION */
 /*###################*/
+.dash {
+  display: none;
+}
 .all-schedules {
   margin-top: 4.8rem;
   margin-bottom: 4.8rem;
@@ -549,6 +555,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: space-between;
+  
 }
 
 .all-schedules {
@@ -582,12 +589,17 @@ body {
 }
 
 .the-section {
-  border-bottom: solid 1px #555;
+  
   padding-bottom: 4.8rem;
   padding-top: 4.8rem;
+  transition: transform 1s, opacity 1s;  
 }
 
-.the-section-last {
-  padding-bottom: 4.8rem;
-  padding-top: 4.8rem;
+.border {
+  border-bottom: solid 1px #555;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
 }
