@@ -98,7 +98,7 @@ function change() {
     ['AP Exams'],
     ['AP Exams', 'Community Use Rental'],
     ['Community Use Rental'],
-    ['Community Use Rental', 'Dhar Mann meet and greet'],
+    ['Community Use Rental'],
     ['Community Use Rental'],
     ['Nothing']
   ];
@@ -144,3 +144,14 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add('section--hidden')
 });
+
+// ADDING EVENTS TO LIST
+
+const addEvent = function(position, message) {
+  const html = `<summary class="the-day">
+  <p class="day-header"> </p>
+  <p class="day-date"></p>
+  <main class="amazing-events">
+  </main>
+</summary>`;
+}
