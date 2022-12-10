@@ -69,7 +69,7 @@
   }
   .period {
     position: absolute;
-    margin-right: 43rem;
+    margin-right: 98rem;
    margin-top: -.9rem
     
     
@@ -83,3 +83,45 @@
   }
 }
 
+@media (max-width: 1050px) {
+  .period {
+    margin-right: 95rem;
+  }
+}
+
+@media (max-width: 1010px) {
+  .period {
+    margin-right: 90rem;
+  }
+}
+
+@media (max-width: 975px) {
+  .period {
+    margin-right: 85rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .period {
+    margin-right: 55rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .period {
+    margin-right: 40rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .period {
+    margin-right: 35rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .period {
+    margin-right: 30rem;
+  }
+}
