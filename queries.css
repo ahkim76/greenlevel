@@ -122,6 +122,13 @@
 
 @media (max-width: 400px) {
   .period {
-    margin-right: 27rem;
+    margin-right: 30rem;
   }
 }
+
+@media (max-width: 350px) {
+  .period {
+    margin-right: 25rem;
+  }
+}
+
